@@ -10,6 +10,8 @@ class LoginPageLocators():
 class ProductPageLocators():
     ADD_BOOK = (By.XPATH, "//button[@class='btn btn-lg btn-primary btn-add-to-basket']")
 
+
+
 class BasketLocators():
     ADD_BOOK = (By.XPATH, " //div[@id='messages']//div[1]//div[1]")
     NAME_BOOK_IN_MESSAGE = (By.CSS_SELECTOR, "div:nth-of-type(1) > .alertinner > strong")

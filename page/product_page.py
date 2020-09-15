@@ -14,6 +14,21 @@ class ProductPage(BasePage):
           self.solve_quiz_and_get_code()
 
 
+      def add_books_in_basket_nigative(self):
+          button = self.browser.find_element(*ProductPageLocators.ADD_BOOK)
+          button.click()
+
+
+      def should_not_be_success_message(self):
+          assert self.is_not_element_present(*BasketLocators.ADD_BOOK),(
+              "Success message is presented, but should not be")
+
+
+      def success_message_is_disappeared(self):
+          assert self.is_disappeared(*BasketLocators.ADD_BOOK), (
+              "Success message didnt disappear")
+
+
       def should_be_in_basket(self):
           self.message_book_add_in_basket()
           self.massage_of_book_should_be_equal_picked_book()
@@ -47,3 +62,5 @@ class ProductPage(BasePage):
            COAST_OF_BOOK = self.browser.find_element(*BasketLocators.COAT_BOOK).text
            assert COAST_OF_BASKET == COAST_OF_BOOK, ("Coast of book  not equal coast of book in basket")
            assert True
+
+
