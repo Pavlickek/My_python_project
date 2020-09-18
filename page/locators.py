@@ -1,15 +1,22 @@
 from selenium.webdriver.common.by import By
 
+
 class MainPageLocators():
+    pass
+
+
+class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+
 
 class LoginPageLocators():
     login = (By.ID, "login_form")
     register = (By.ID, "register_form")
 
+
 class ProductPageLocators():
     ADD_BOOK = (By.XPATH, "//button[@class='btn btn-lg btn-primary btn-add-to-basket']")
-
 
 
 class BasketLocators():
