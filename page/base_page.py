@@ -3,18 +3,22 @@ from selenium.common.exceptions import TimeoutException
 from selenium.common.exceptions import NoAlertPresentException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from .locators import BasePageLocators
+from .locators import BasePageLocators, BasketLocators
 import math
 
 
-class BasePage():# transfered it because login ling is on each pages in web-aplication to avoid dublicates
+class BasePage():
 
-    def should_be_login_link(self):
+    def should_be_login_link(self): # transfered it because login ling is on each pages in web-aplication to avoid dublicates
         assert self.is_element_present(*BasePageLocators.LOGIN_LINK), ("Login link is not present")
 
-    def go_to_login_page(self):
+    def go_to_login_page(self): # transfered it because login ling is on each pages in web-aplication to avoid dublicates
         login_link = self.browser.find_element(*BasePageLocators.LOGIN_LINK)
         login_link.click()
+
+    def go_to_the_basket(self): # transfered it because basket ling is on each pages in web-aplication to avoid dublicates
+        basket_link = self.browser.find_element(*BasketLocators.BASKET_LINK)
+        basket_link.click()
 
     def solve_quiz_and_get_code(self):
         alert = self.browser.switch_to.alert
