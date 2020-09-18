@@ -20,6 +20,9 @@ class ProductPageLocators():
 
 
 class BasketLocators():
+    BASKET_LINK = (By.CSS_SELECTOR, ".btn-group a")
+    STRING_ABOUT_BASKET_IS_EMPTY = (By.CSS_SELECTOR, "div#content_inner > p")
+    STRING_IF_BASKET_HAS_GOODS = (By.CSS_SELECTOR, ".col-sm-6.h3")
     ADD_BOOK = (By.XPATH, " //div[@id='messages']//div[1]//div[1]")
     NAME_BOOK_IN_MESSAGE = (By.CSS_SELECTOR, "div:nth-of-type(1) > .alertinner > strong")
     NAME_BOOK_IN_BASKET = (By.TAG_NAME, "h1")
