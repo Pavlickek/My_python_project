@@ -1,6 +1,7 @@
 from .page.product_page import ProductPage
 import pytest
 
+
 link_for_each_test = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
 
 @pytest.mark.xfail
